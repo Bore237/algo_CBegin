@@ -75,7 +75,7 @@ bool bNumberIsPerfect(unsigned int  iNumber);
  * @return true if the convertion go well
  * @return false if the convertion fail
  */
-bool bConvDecToBinary(int iNumber);
+bool bConvDecToBinary(unsigned int  iNumber);
 
 /**
  * @brief check if the input data is the armstromg number

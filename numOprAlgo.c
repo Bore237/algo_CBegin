@@ -1,4 +1,5 @@
-#include "arrayAlgo.h"
+#include <errno.h>
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -117,7 +118,6 @@ bool bIsPowerOfTwo(int iNumber){
 }
 
 
-
 /**
  * @brief check if the number is pecfect
  *
@@ -145,4 +145,37 @@ bool bNumberIsPerfect(unsigned int  iNumber){
         return false;
     }
 
+}
+
+
+/**
+ * @brief do the convertion the decimal number and binary number
+ *
+ * @param iNumber the integer that you want to convert
+ * @return true if the convertion go well
+ * @return false if the convertion fail
+ */
+bool bConvDecToBinary(unsigned int iNumber){
+    int size = (int) ((log(iNumber)/ log(2)) +1);
+    bool *bResult = malloc(sizeof(bool[size+1]));
+    unsigned int iCount = 0;
+
+    /* loop and do the division of two */
+    while (iNumber > 0){
+        if((iNumber %2) == 0){
+            *(bResult + iCount) = 0;
+        }else{
+            *(bResult + iCount) = 1;
+        }
+        iNumber /= 2;
+        iCount++;
+    }
+    /* remove the oveerflow element */
+    iCount--;
+
+    /* display the result of the convertion */
+    printf("The convertion of %d is: ", iNumber);
+    for(unsigned int i=0; i<=iCount; i++){
+        printf("%d", *(bResult +(iCount-i)));
+    }
 }

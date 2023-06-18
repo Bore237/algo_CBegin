@@ -8,10 +8,11 @@
 
 int main()
 {
-    bIsFirtNumber(6);
-    iFatorialInt(5);
-    vPowerNumber(2,8);
-    bIsPowerOfTwo(6);
-    bNumberIsPerfect(33550336);
+//    bIsFirtNumber(6);
+//    iFatorialInt(5);
+//    vPowerNumber(2,8);
+//    bIsPowerOfTwo(6);
+//    bNumberIsPerfect(33550336);
+    bConvDecToBinary(602);
     return 0;
 }
