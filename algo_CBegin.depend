@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1687107354 source:/home/goudjouborel/Documents/algo_c_exo/algo_CBegin/main.c
+1687115003 source:/home/goudjouborel/Documents/algo_c_exo/algo_CBegin/main.c
 	<stdio.h>
 	<stdlib.h>
 	"numOprAlgo.h"
@@ -12,13 +12,13 @@
 	<stdlib.h>
 	"numOprAlgo.h"
 
-1687081915 /home/goudjouborel/Documents/algo_c_exo/algo_CBegin/arrayAlgo.h
+1687115515 /home/goudjouborel/Documents/algo_c_exo/algo_CBegin/arrayAlgo.h
 	<stdbool.h>
 
 1687101154 /home/goudjouborel/Documents/algo_c_exo/algo_CBegin/numOprAlgo.h
 	<stdbool.h>
 
-1687073486 source:/home/goudjouborel/Documents/algo_c_exo/algo_CBegin/arrayAlgo.c
+1687115661 source:/home/goudjouborel/Documents/algo_c_exo/algo_CBegin/arrayAlgo.c
 	"arrayAlgo.h"
 	<stdio.h>
 	<stdlib.h>

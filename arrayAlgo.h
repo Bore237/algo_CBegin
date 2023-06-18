@@ -15,11 +15,13 @@
 
 /**
  * @brief Caculate the sum of arrea element
- * 
- * @param pvOutBuffer 
- * @param pvIntBuffer 
+ *
+ * @param pvIntBuffer is a input array
+ * @param iSize the length of the vector
+ * @param iTypeSize la taile du type de donnée
+ * @return the addres that cotaint the sum of all the array
  */
-void vSumArray(void *pvOutBuffer, void *pvIntBuffer);
+float fSumArray(void *pvIntBuffer, int iSize, char cTypeElement);
 
 
 /**
