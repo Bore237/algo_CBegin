@@ -40,14 +40,14 @@ bool bIsFirtNumber(unsigned int iTestNumber){
 
 /**
  * @brief caculate the factorial of the word
- * 
- * @param iTestnumber the number that we to obtains factorial 
- * @return  factorial of the input number 
+ *
+ * @param iTestnumber the number that we to obtains factorial
+ * @return  factorial of the input number
  */
 unsigned int iFatorialInt(unsigned int iTestnumber){
     /* this value store the result of operation */
     unsigned int iFacResult = 1;
-    
+
     /* loop for all the before the ref value */
     for(int data=iTestnumber; data>0; data--){
         iFacResult = iFacResult * data;
@@ -61,9 +61,9 @@ unsigned int iFatorialInt(unsigned int iTestnumber){
 
 /**
  * @brief calculate the power of number
- * 
- * @param fNumber   is the number that we want to obtains power 
- * @param iLevelPow   is the power number of the operation  
+ *
+ * @param fNumber   is the number that we want to obtains power
+ * @param iLevelPow   is the power number of the operation
  */
 float vPowerNumber( float fNumber, int iLevelPow){
     /* this value store the result of operation */
@@ -73,7 +73,7 @@ float vPowerNumber( float fNumber, int iLevelPow){
     /* check the state of power */
     if(iLevelPow < 0){
         bStateOpr = false;
-        iLevelPow = iLevelPow * -1; 
+        iLevelPow = iLevelPow * -1;
     }else if (iLevelPow == 0){
         return (float)1;
     }
@@ -89,7 +89,7 @@ float vPowerNumber( float fNumber, int iLevelPow){
 
     /* reset the power */
     if(bStateOpr == false){
-        iLevelPow = iLevelPow * -1; 
+        iLevelPow = iLevelPow * -1;
     }
 
     /* Display the result */
@@ -100,7 +100,7 @@ float vPowerNumber( float fNumber, int iLevelPow){
 
 /**
  * @brief check if  the number is power of two
- * 
+ *
  * @param iNumber the number that you want check
  * @return true   if is power of two
  * @return false  if is no power of two
@@ -108,10 +108,41 @@ float vPowerNumber( float fNumber, int iLevelPow){
 bool bIsPowerOfTwo(int iNumber){
     /* Do the modulo of that number and check if equal to zero */
     if((iNumber % 2) == 0){
-        printf("This number is a power of two ");
+        printf("This number is a power of two \n");
         return true;
     }else{
-        printf(" This number is not a power of two ");
+        printf(" This number is not a power of two \n");
         return false;
     }
+}
+
+
+
+/**
+ * @brief check if the number is pecfect
+ *
+ * @param iNumber the integer that you want to check
+ * @return true  if is a is pecfect number
+ * @return false if is not a pecfect number
+ */
+bool bNumberIsPerfect(unsigned int  iNumber){
+    /* init the counter of division without rest */
+    unsigned int iCountDiv = 0;
+
+    /* Do the loop for take all the divisor of input number*/
+    for(unsigned int i=2; i<= iNumber; i++){
+        if((iNumber % i) == 0){
+            iCountDiv += (iNumber/i);
+        }
+    }
+
+    /* Display the result */
+    if(iNumber == iCountDiv){
+        printf("This number is the pecfect number \n");
+        return true;
+    }else{
+        printf("This number is not the pecfect number \n");
+        return false;
+    }
+
 }

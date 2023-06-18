@@ -53,8 +53,8 @@ float vPowerNumber( float fNumber, int iLevelPow);
  * @brief check if  the number is power of two
  * 
  * @param iNumber the number that you want check
- * @return true   
- * @return false 
+ * @return true   if is power of two
+ * @return false  if is no power of two
  */
 bool bIsPowerOfTwo(int iNumber);
 
@@ -63,10 +63,10 @@ bool bIsPowerOfTwo(int iNumber);
  * @brief check if the number is pecfect
  * 
  * @param iNumber the integer that you want to check
- * @return true 
- * @return false 
+ * @return true  if is a is pecfect number
+ * @return false if is not a pecfect number 
  */
-bool bNumberIsPerfect(int iNumber);
+bool bNumberIsPerfect(unsigned int  iNumber);
 
 /**
  * @brief do the convertion the decimal number and binary number   
