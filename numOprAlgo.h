@@ -44,10 +44,10 @@ void vDisplayFibonacci(int iNumberTerm);
 /**
  * @brief calculate the power of number
  * 
- * @param pvOutBuffer 
- * @param pvIntBuffer 
+ * @param fNumber   is the number that we want to obtains power 
+ * @param iLevelPow   is the power number of the operation  
  */
-void vPowerNumber(void *pvOutBuffer, void *pvIntBuffer);
+float vPowerNumber( float fNumber, int iLevelPow);
 
 /**
  * @brief check if  the number is power of two

@@ -10,5 +10,7 @@ int main()
 {
     bIsFirtNumber(6);
     iFatorialInt(5);
+    vPowerNumber(2,8);
+    bIsPowerOfTwo(6);
     return 0;
 }
