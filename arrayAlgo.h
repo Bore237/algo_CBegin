@@ -18,7 +18,7 @@
  *
  * @param pvIntBuffer is a input array
  * @param iSize the length of the vector
- * @param iTypeSize la taile du type de donnée
+ * @param iTypeSize the size of type of data: 'i' for int and 'f' to float
  * @return the addres that cotaint the sum of all the array
  */
 float fSumArray(void *pvIntBuffer, int iSize, char cTypeElement);
@@ -29,7 +29,7 @@ float fSumArray(void *pvIntBuffer, int iSize, char cTypeElement);
  * 
  * @param pvIntBuffer is a input array
  * @param iSize the length of the vector
- * @param iTypeSize la taile du type de donnée
+ * @param iTypeSize the size of type of data: 'i' for int and 'f' to float
  * @return the addres that cotaint the max(index 1) and min(index 0) of all the array
  */
 float* fMaxMinArrea(void *pvIntBuffer, int iSize, char cTypeElement);
@@ -79,7 +79,7 @@ bool bIsAnagram(char *pcWordBuffer1, char *pcWordBuffer2);
  * @param pvIntBuffer 
  * @return  means of the arrays
  */
-float fMeansArray(void *pvIntBuffer);
+float fMeansArray(void *pvIntBuffer, int iSize, char cTypeElement);
 
 
 /**

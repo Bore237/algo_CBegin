@@ -227,7 +227,6 @@ bool bIsAnagram(char *pcRefWord, char *pcCompareWord)
             {
                 pcSwapWord(pcCompareWord, i, j);
                 bStateIn = true;
-                printf("Okay \n");
                 break;
             }
         }
