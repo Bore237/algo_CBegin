@@ -18,8 +18,10 @@ int main()
 
     float SumArray  =0;
     SumArray = fSumArray(tab, 5, 'i');
+    float* maxmin = fMaxMinArrea(tab, 5, 'i');
 
         /* Display result */
     printf("The sum of vector is: %f\n", SumArray);
+    printf("The min of vector is: %f and max is %f\n", maxmin[0], maxmin[1]);
     return 0;
 }

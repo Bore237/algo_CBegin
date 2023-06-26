@@ -27,11 +27,12 @@ float fSumArray(void *pvIntBuffer, int iSize, char cTypeElement);
 /**
  * @brief find the max and mind in the arrea and return them 
  * 
- * @param pvOutBuffer 
- * @param pvIntBuffer 
+ * @param pvIntBuffer is a input array
+ * @param iSize the length of the vector
+ * @param iTypeSize la taile du type de donnée
+ * @return the addres that cotaint the max(index 1) and min(index 0) of all the array
  */
-void vMaxMinArrea(void *pvOutBuffer, void *pvIntBuffer);
-
+float* fMaxMinArrea(void *pvIntBuffer, int iSize, char cTypeElement);
 
 /**
  * @brief check if the string is a bIsPalindrome

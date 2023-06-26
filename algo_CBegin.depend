@@ -24,3 +24,22 @@
 	<stdlib.h>
 	"arrayAlgo.h"
 
+1687746841 source:d:\programation web initiation\kfokam48_folder\algo_cbegin\main.c
+	<stdio.h>
+	<stdlib.h>
+	"numOprAlgo.h"
+	"arrayAlgo.h"
+
+1687669056 d:\programation web initiation\kfokam48_folder\algo_cbegin\numopralgo.h
+	<stdbool.h>
+
+1687746798 d:\programation web initiation\kfokam48_folder\algo_cbegin\arrayalgo.h
+	<stdbool.h>
+
+1687669056 source:d:\programation web initiation\kfokam48_folder\algo_cbegin\numopralgo.c
+	<errno.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"numOprAlgo.h"
+
