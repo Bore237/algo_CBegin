@@ -15,6 +15,7 @@ int main()
 //    bNumberIsPerfect(33550336);
 //    bConvDecToBinary(602);
     int tab[5] = {1,2,3,4,5};
+    char str[]="reifier";
 
     float SumArray  =0;
     SumArray = fSumArray(tab, 5, 'i');
@@ -23,5 +24,6 @@ int main()
         /* Display result */
     printf("The sum of vector is: %f\n", SumArray);
     printf("The min of vector is: %f and max is %f\n", maxmin[0], maxmin[1]);
+    bIsPalindrome(str);
     return 0;
 }

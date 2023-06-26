@@ -56,8 +56,8 @@ void vSortSelection(void *pvOutBuffer, void *pvIntBuffer);
 /**
  * @brief inverse the words of the string
  * 
- * @param pcWordBuffer 
- * @return 
+ * @param pcWordBuffer : The adress of word that want to inverse it
+ * @return the address of inverse word
  */
 char* pcInverseString(char *pcWordBuffer);
 
