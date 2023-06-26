@@ -63,13 +63,14 @@ char* pcInverseString(char *pcWordBuffer);
 
 
 /**
- * @brief check if the  word is and anagram
+ * @brief check if two words are the anagram
  * 
- * @param pcWordBuffer the buffer that you want to check
- * @return true 
- * @return false 
+ * @param pcWordBuffer the word one
+ * @param pcWordBuffer the word two
+ * @return true if the two words are the anagram
+ * @return false if the two words are not the anagram
  */
-bool bIsAnagram(char *pcWordBuffer);
+bool bIsAnagram(char *pcWordBuffer1, char *pcWordBuffer2);
 
 
 /**

@@ -2,15 +2,50 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 // import the local file for this source file
 #include "arrayAlgo.h"
 
-/*
- *  Define varible
- */
+/**
+***************/
+/*  DEFINITION OF VARIABLE */ /**********************
+                               */
 #define INDEX_MIN 0
 #define INDEX_MAX 1
+
+/**
+***************/
+/*  DECLARATION OF STATIC FUNCTION */ /**************
+                                       */
+static void pcSwapWord(char *pcBuffer, int index1, int index2);
+
+/**
+ **************/
+/* IMPLEMENTATION OF STATIC FUNCTION */ /************
+                                         */
+
+/**
+ * @brief
+ *
+ * @param pcBuffer
+ * @param index1
+ * @param index2
+ * @return char*
+ */
+static void pcSwapWord(char *pcBuffer, int index1, int index2)
+{
+    // Do the local storage
+    char cLocal = pcBuffer[index1];
+    // Change wordposition
+    pcBuffer[index1] = pcBuffer[index2];
+    pcBuffer[index2] = cLocal;
+}
+
+/**
+*************/
+/*  IMPLEMENTATION OF GLOBAL FUNCTION   */ /***********
+                                            */
 
 /**
  * @brief Caculate the sum of arrea element
@@ -125,7 +160,7 @@ bool bIsPalindrome(char *pcWordBuffer)
         }
         else
         {
-            printf("Ce mot n'est pas un Palindome ");
+            printf("Ce mot n'est pas un Palindrome \n");
             return false;
         }
     }
@@ -133,3 +168,77 @@ bool bIsPalindrome(char *pcWordBuffer)
     return true;
 }
 
+/**
+ * @brief inverse the words of the string
+ *
+ * @param pcWordBuffer : The adress of word that want to inverse it
+ * @return the address of inverse word
+ */
+char *pcInverseString(char *pcWordBuffer)
+{
+    // find the length of the word
+    int iLength = strlen(pcWordBuffer);
+
+    //  Create the string that will be containt the inverse word
+    char *pcInverseWord = malloc(sizeof(char[iLength]));
+
+    // loop for inverse the word
+    printf("Tne inverse word is:");
+    for (int i = 0; i < iLength; i++)
+    {
+        pcInverseWord[i] = pcWordBuffer[iLength - (i + 1)];
+        // Display result
+        printf("%c ", pcInverseWord[i]);
+    }
+    printf("\n");
+    return pcInverseWord;
+}
+
+/********** Anagram exercice ***********/
+
+/**
+ * @brief check if two words are the anagram
+ *
+ * @param pcRefWord the word one
+ * @param pcCompareWord the word two
+ * @return true if the two words are the anagram
+ * @return false if the two words are not the anagram
+ */
+bool bIsAnagram(char *pcRefWord, char *pcCompareWord)
+{
+    // find the length of two word
+    int iLength1 = strlen(pcRefWord);
+    int iLength2 = strlen(pcCompareWord);
+    bool bStateIn = false;
+
+    // check if the words have the same length
+    if (iLength1 != iLength2)
+    {
+        printf("The two words are not the analgram off \n");
+        return false;
+    }
+
+    // loop and chech if the two words have the same characters
+    for (int i = 0; i < iLength1; i++)
+    {
+        for (int j = i; j < iLength1; j++)
+        {
+            if (tolower(pcRefWord[i]) == tolower(pcCompareWord[j]))
+            {
+                pcSwapWord(pcCompareWord, i, j);
+                bStateIn = true;
+                printf("Okay \n");
+                break;
+            }
+        }
+        if (bStateIn == false)
+        {
+            printf("The two words are not the analgram on \n");
+            return false;
+        }
+        bStateIn = false;
+    }
+
+    printf("The two words are the analgram \n");
+    return true;
+}
