@@ -6,6 +6,7 @@
 
 // import the local file for this source file
 #include "arrayAlgo.h"
+#include "numOprAlgo.h"
 
 /**
 ***************/
@@ -65,23 +66,31 @@ static void fvSwapWord(char *pcBuffer, int index1, int index2)
  * @param cTypeVar type of Array
  * @return int     length of array
  */
-static int iLengthArray(void *pvArray, char cTypeVar) {
-    //Init the count
+static int iLengthArray(void *pvArray, char cTypeVar)
+{
+    // Init the count
     int iCount = 0;
-    //Choose the choose of variable
-    if(cTypeVar == 'f'){
-        float* pfArr = (float*)pvArray;
-        while (*pfArr != '\0') {
+    // Choose the choose of variable
+    if (cTypeVar == 'f')
+    {
+        float *pfArr = (float *)pvArray;
+        while (*pfArr != '\0')
+        {
             iCount++;
             pfArr++;
         }
-    }else if(cTypeVar == 'i'){
-        int* pcArr = (int*)pvArray;
-        while (*pcArr != '\0') {
+    }
+    else if (cTypeVar == 'i')
+    {
+        int *pcArr = (int *)pvArray;
+        while (*pcArr != '\0')
+        {
             iCount++;
             pcArr++;
         }
-    }else{
+    }
+    else
+    {
         return 0;
     }
 
@@ -143,7 +152,7 @@ float *fSumMeanArray(void *pvIntBuffer, char cTypeElement)
  * @brief find the max and mind in the arrea and return them
  *
  * @param pvIntBuffer is a input array
- * @param iTypeSize la taile du type de donnée
+ * @param cTypeElement the size of type of data: 'i' for int and 'f' to float
  * @return the addres that cotaint the max(index 1) and min(index 0) of all the array
  */
 float *fMaxMinArrea(void *pvIntBuffer, char cTypeElement)
@@ -364,6 +373,70 @@ float *vIntersionOfArray(float *pfResultBuffer, float *pfFirstBuffer, float *pfS
             }
         }
     }
-     printf("\n ");
+    printf("\n ");
     return pfResultBuffer;
+}
+
+/**
+ * @brief count the number of permutation the ensembly
+ *
+ * @param pvIntBuffer input array that you want to know numnber of permutation
+ * @param cTypeElement the size of type of data: 'i' for int, 'c' for char and 'f' to float
+ * @return  the number of permutation for this array
+ */
+int iNberPermutation(void *pvIntBuffer, char cTypeElement)
+{
+    // Init variable
+    int iCount = 0;
+    int iNbrRedondance = 1;
+    int iFixPos = 0;
+    int iProdFactorial = 1;
+    int iSize = 0;
+
+    // the number of possibility is fatorial
+    if (cTypeElement != 'c')
+    {
+        // Calculate the size of array
+        iSize = iLengthArray((void *)pvIntBuffer, cTypeElement);
+
+        // Convert to the float type
+        float *pfArray = (float *)pvIntBuffer;
+    }
+    else
+    {
+        // Convert to the float type
+        char *pfArray = (char *)pvIntBuffer;
+
+        // Calculate the size of array
+        iSize = strlen(pfArray);
+        printf("\n size %d \n", iSize);
+
+        // Check if the array have the redundace value
+        while (iCount < iSize)
+        {
+            // Take the fix position and increase current count
+            iFixPos = iCount;
+            iCount++;
+            // Loop for find if the array has a redondance element
+            for (int j = iCount; j < iSize; j++)
+            {
+                if (pfArray[iFixPos] == pfArray[j])
+                {
+                    fvSwapWord(pfArray, (iCount), j);
+                    iNbrRedondance++;
+                    iCount++;
+                }
+            }
+            // If the redondance happen skip to the next position
+            if ((iCount - iFixPos) > 1)
+            {
+                iProdFactorial = iProdFactorial * iFatorialInt(iNbrRedondance);
+                // Reset redondance count
+                iNbrRedondance = 1;
+            }
+        }
+    }
+
+    // if the ensembly have the repily the nbr of poss is n!/k!
+    return (iFatorialInt(iSize) / iProdFactorial);
 }

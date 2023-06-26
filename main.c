@@ -27,6 +27,7 @@ int main()
     float *pfIntersetion;
     float A[9]={1, 4, 5, 8, 10, 34, 100};
     float B[9]={3, 2, 7, 10, 25, 26, 27, 34, 100};
+    char pvIntBuffer[]="CELpUkmy";
 
     //Call local function
     float* resultarray = fSumMeanArray(tab,'i');
@@ -36,10 +37,12 @@ int main()
     bIsAnagram(strAnagram1, strAnagram2);
     int nbrVoyel = iNbrVowelOfWord(strAnagram1);
     pfIntersetion = vIntersionOfArray(pfIntersetion, A, B);
+    int nbrPosssi = iNberPermutation(pvIntBuffer, 'c');
 
     /* display result */
     printf("the sum of vector is: %f \n the mean of vector is: %f \n", resultarray[0], resultarray[1]);
     printf("the min of vector is: %f and max is %f\n", maxmin[0], maxmin[1]);
     printf("The number of vowel is: %d\n", nbrVoyel);
+    printf("The number of possibility is: %d", nbrPosssi);
     return 0;
 }

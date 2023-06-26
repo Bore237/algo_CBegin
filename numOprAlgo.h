@@ -28,8 +28,8 @@ bool bIsFirtNumber(unsigned int  iTestNumber);
 /**
  * @brief caculate the factorial of the word
  *
- * @param iTestnumber
- * @return int factorial
+ * @param iTestnumber Input integer number
+ * @return factorial of input number
  */
 unsigned int iFatorialInt(unsigned int iTestnumber);
 

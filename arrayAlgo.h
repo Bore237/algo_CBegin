@@ -24,7 +24,7 @@ float *fSumMeanArray(void *pvIntBuffer, char cTypeElement);
  * @brief find the max and mind in the arrea and return them
  *
  * @param pvIntBuffer is a input array
- * @param iTypeSize the size of type of data: 'i' for int and 'f' to float
+ * @param cTypeElement the size of type of data: 'i' for int and 'f' to float
  * @return the addres that cotaint the max(index 1) and min(index 0) of all the array
  */
 float *fMaxMinArrea(void *pvIntBuffer, char cTypeElement);
@@ -94,9 +94,10 @@ float *vIntersionOfArray(float *pfResultBuffer, float *pfFirstBuffer, float *pfS
  * @brief count the number of permutation the ensembly
  *
  * @param pvIntBuffer input array that you want to know numnber of permutation
+ * @param cTypeElement the size of type of data: 'i' for int, 'c' for char and 'f' to float
  * @return  the number of permutation for this array
  */
-int iNberPermutation(void *pvIntBuffer);
+int iNberPermutation(void *pvIntBuffer, char cTypeElement);
 
 float fProduiscalaire(float *one, float two);
 
