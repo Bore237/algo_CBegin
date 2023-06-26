@@ -24,16 +24,16 @@
 	<stdlib.h>
 	"arrayAlgo.h"
 
-1687774432 source:d:\programation web initiation\kfokam48_folder\algo_cbegin\main.c
+1687784587 source:d:\programation web initiation\kfokam48_folder\algo_cbegin\main.c
 	<stdio.h>
 	<stdlib.h>
 	"numOprAlgo.h"
 	"arrayAlgo.h"
 
-1687669056 d:\programation web initiation\kfokam48_folder\algo_cbegin\numopralgo.h
+1687781953 d:\programation web initiation\kfokam48_folder\algo_cbegin\numopralgo.h
 	<stdbool.h>
 
-1687772342 d:\programation web initiation\kfokam48_folder\algo_cbegin\arrayalgo.h
+1687783991 d:\programation web initiation\kfokam48_folder\algo_cbegin\arrayalgo.h
 	<stdbool.h>
 
 1687669056 source:d:\programation web initiation\kfokam48_folder\algo_cbegin\numopralgo.c
@@ -43,7 +43,7 @@
 	<stdlib.h>
 	"numOprAlgo.h"
 
-1687774480 source:d:\programation web initiation\kfokam48_folder\algo_cbegin\arrayalgo.c
+1687784787 source:d:\programation web initiation\kfokam48_folder\algo_cbegin\arrayalgo.c
 	"arrayAlgo.h"
 	<stdio.h>
 	<stdlib.h>

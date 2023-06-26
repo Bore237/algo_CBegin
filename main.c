@@ -8,30 +8,38 @@
 
 int main()
 {
+    /* */
+    printf(" The result of number function \n  \n");
 //    bIsFirtNumber(6);
 //    iFatorialInt(5);
 //    vPowerNumber(2,8);
 //    bIsPowerOfTwo(6);
 //    bNumberIsPerfect(33550336);
 //    bConvDecToBinary(602);
-    int tab[5] = {1,2,3,4,5};
+
+/////*  Array function *//////
+    printf(" The result of array function \n \n");
+    // Init the variables
+    int tab[5] = {8,3,3,4,5};
     char strPalindrone[]="radar";
-    char strAnagram1[] = "Migraineeo";
+    char strAnagram1[] = "Migraine";
     char strAnagram2[] = "Imaginer";
+    float *pfIntersetion;
+    float A[9]={1, 4, 5, 8, 10, 34, 100};
+    float B[9]={3, 2, 7, 10, 25, 26, 27, 34, 100};
 
-
-//    float SumArray  =0;
-//    SumArray = fSumArray(tab, 5, 'i');
-//    float* maxmin = fMaxMinArrea(tab, 5, 'i');
-//
-//        /* Display result */
-//    printf("The sum of vector is: %f\n", SumArray);
-//    printf("The min of vector is: %f and max is %f\n", maxmin[0], maxmin[1]);
-//    bIsPalindrome(strPalindrone);
-//    pcInverseString(strPalindrone);
+    //Call local function
+    float* resultarray = fSumMeanArray(tab,'i');
+    float* maxmin = fMaxMinArrea(tab, 'i');
+    bIsPalindrome(strPalindrone);
+    pcInverseString(strPalindrone);
     bIsAnagram(strAnagram1, strAnagram2);
-    float meanArray = fMeansArray(tab, 5,'i');
     int nbrVoyel = iNbrVowelOfWord(strAnagram1);
-    printf("The mean of vector is: %d\n", nbrVoyel);
+    pfIntersetion = vIntersionOfArray(pfIntersetion, A, B);
+
+    /* display result */
+    printf("the sum of vector is: %f \n the mean of vector is: %f \n", resultarray[0], resultarray[1]);
+    printf("the min of vector is: %f and max is %f\n", maxmin[0], maxmin[1]);
+    printf("The number of vowel is: %d\n", nbrVoyel);
     return 0;
 }
