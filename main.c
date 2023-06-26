@@ -16,7 +16,7 @@ int main()
 //    bConvDecToBinary(602);
     int tab[5] = {1,2,3,4,5};
     char strPalindrone[]="radar";
-    char strAnagram1[] = "Migraine";
+    char strAnagram1[] = "Migraineeo";
     char strAnagram2[] = "Imaginer";
 
 
@@ -30,5 +30,8 @@ int main()
 //    bIsPalindrome(strPalindrone);
 //    pcInverseString(strPalindrone);
     bIsAnagram(strAnagram1, strAnagram2);
+    float meanArray = fMeansArray(tab, 5,'i');
+    int nbrVoyel = iNbrVowelOfWord(strAnagram1);
+    printf("The mean of vector is: %d\n", nbrVoyel);
     return 0;
 }

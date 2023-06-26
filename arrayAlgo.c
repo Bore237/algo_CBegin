@@ -18,7 +18,7 @@
 ***************/
 /*  DECLARATION OF STATIC FUNCTION */ /**************
                                        */
-static void pcSwapWord(char *pcBuffer, int index1, int index2);
+static void fvSwapWord(char *pcBuffer, int index1, int index2);
 
 /**
  **************/
@@ -26,14 +26,13 @@ static void pcSwapWord(char *pcBuffer, int index1, int index2);
                                          */
 
 /**
- * @brief
+ * @brief change the position of two position
  *
- * @param pcBuffer
- * @param index1
- * @param index2
- * @return char*
+ * @param pcBuffer String that want to swap
+ * @param index1  reference index
+ * @param index2  second index
  */
-static void pcSwapWord(char *pcBuffer, int index1, int index2)
+static void fvSwapWord(char *pcBuffer, int index1, int index2)
 {
     // Do the local storage
     char cLocal = pcBuffer[index1];
@@ -41,6 +40,7 @@ static void pcSwapWord(char *pcBuffer, int index1, int index2)
     pcBuffer[index1] = pcBuffer[index2];
     pcBuffer[index2] = cLocal;
 }
+
 
 /**
 *************/
@@ -225,7 +225,7 @@ bool bIsAnagram(char *pcRefWord, char *pcCompareWord)
         {
             if (tolower(pcRefWord[i]) == tolower(pcCompareWord[j]))
             {
-                pcSwapWord(pcCompareWord, i, j);
+                fvSwapWord(pcCompareWord, i, j);
                 bStateIn = true;
                 break;
             }
@@ -240,4 +240,82 @@ bool bIsAnagram(char *pcRefWord, char *pcCompareWord)
 
     printf("The two words are the analgram \n");
     return true;
+}
+
+
+/**
+ * @brief calculate the means  of arreas
+ *
+ * @param pvIntBuffer is a input array
+ * @param iSize the length of the vector
+ * @param iTypeSize the size of type of data: 'i' for int and 'f' to float
+ * @return  means of the arrays
+ */
+float fMeansArray(void *pvIntBuffer, int iSize, char cTypeElement){
+
+    /* init the accumulator varable */
+    float fSomme = 0;
+
+    /* Caster this void pointer to charfor use it */
+    char *pfBuffer = (char *)pvIntBuffer;
+
+    /* Check the type of element */
+    if (cTypeElement == 'i')
+    {
+        int *tableauEntier = pvIntBuffer;
+        /* loop and do the sum of element */
+        for (int i = 0; i < iSize; i++)
+        {
+            fSomme += tableauEntier[i];
+        }
+    }
+    else if (cTypeElement == 'f')
+    {
+        float *tableauFlottant = pvIntBuffer;
+        /* loop and do the sum of element */
+        for (int i = 0; i < iSize; i++)
+        {
+            fSomme += tableauFlottant[i];
+        }
+    }
+
+    return (float)(fSomme/iSize);
+}
+
+/**
+ * @brief count the number of vowel in a word
+ *
+ * @param pcWordBuffer  The input word
+ * @return the vowel length
+ */
+int iNbrVowelOfWord(char *pcWordBuffer){
+    //init the counter of voyel
+    int iVoyelCount = 0;
+    int length = strlen(pcWordBuffer);
+    //do the while loop and check the voyelle
+    for (size_t i = 0; i < length; i++)
+    {
+        switch (tolower(pcWordBuffer[i]))
+        {
+        case 'a':
+            iVoyelCount++;
+            break;
+        case 'e':
+            iVoyelCount++;
+            break;
+        case 'u':
+            iVoyelCount++;
+            break;
+        case 'i':
+            iVoyelCount++;
+            break;
+        case 'o':
+            iVoyelCount++;
+            break;
+        default:
+            break;
+        }
+    }
+
+    return iVoyelCount;
 }

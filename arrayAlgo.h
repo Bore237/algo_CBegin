@@ -76,7 +76,9 @@ bool bIsAnagram(char *pcWordBuffer1, char *pcWordBuffer2);
 /**
  * @brief calculate the means  of arreas
  * 
- * @param pvIntBuffer 
+ * @param pvIntBuffer is a input array
+ * @param iSize the length of the vector
+ * @param iTypeSize the size of type of data: 'i' for int and 'f' to float
  * @return  means of the arrays
  */
 float fMeansArray(void *pvIntBuffer, int iSize, char cTypeElement);
@@ -85,7 +87,7 @@ float fMeansArray(void *pvIntBuffer, int iSize, char cTypeElement);
 /**
  * @brief count the number of vowel in a word
  * 
- * @param pcWordBuffer 
+ * @param pcWordBuffer  The input word
  * @return the vowel length 
  */
 int iNbrVowelOfWord(char *pcWordBuffer);
