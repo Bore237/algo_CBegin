@@ -206,3 +206,33 @@ bool bConvDecToBinary(unsigned int iNumber)
         printf("%d", *(bResult + (iCount - i)));
     }
 }
+
+/**
+ * @brief Count the number of digit for enteger number
+ *
+ * @param valeurEntier Input value that will want to know the digit number
+ * @return the number of digit to  the interger
+ */
+int iNbrDigitToInteger(int iIntergerValue)
+{
+    // Init the value
+    int iNbrDigit = 1;
+    bool bState = true;
+
+    // loop and do the modolo 10 for this operation
+    while (bState == true)
+    {
+        iIntergerValue = (int)(iIntergerValue / 10);
+
+        if (iIntergerValue >= 1)
+        {
+            iNbrDigit++;
+        }
+        else
+        {
+            bState = false;
+        }
+    }
+
+    return iNbrDigit;
+}

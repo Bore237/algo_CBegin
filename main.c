@@ -15,6 +15,9 @@ int main()
     //    bIsPowerOfTwo(6);
     //    bNumberIsPerfect(33550336);
     //    bConvDecToBinary(602);
+    int iNbrDigit = iNbrDigitToInteger(789);
+
+    printf("The number of digit is %d", iNbrDigit);
 
     /////*  Array function *//////
     printf(" The result of array function \n \n");
@@ -26,22 +29,27 @@ int main()
     float *pfIntersetion;
     float A[9] = {1, 4, 5, 8, 10, 34, 100};
     float B[9] = {3, 2, 7, 10, 25, 26, 27, 34, 100};
+    float fVectU1[3] = {2,3,4};
+    float fVectU2[3] = {1,-2,2};
     char pvIntBuffer[] = "CELLULE";
+
 
     // Call local function
     float *resultarray = fSumMeanArray(tab, 'i');
-    float *maxmin = fMaxMinArrea(tab, 'i');
-    bIsPalindrome(strPalindrone);
-    pcInverseString(strPalindrone);
-    bIsAnagram(strAnagram1, strAnagram2);
-    int nbrVoyel = iNbrVowelOfWord(strAnagram1);
-    pfIntersetion = vIntersionOfArray(pfIntersetion, A, B);
-    int nbrPosssi = iNberPermutation(pvIntBuffer, 'c');
+//    float *maxmin = fMaxMinArrea(tab, 'i');
+//    bIsPalindrome(strPalindrone);
+//    pcInverseString(strPalindrone);
+//    bIsAnagram(strAnagram1, strAnagram2);
+//    int nbrVoyel = iNbrVowelOfWord(strAnagram1);
+//    pfIntersetion = vIntersionOfArray(pfIntersetion, A, B);
+//    int nbrPosssi = iNberPermutation(pvIntBuffer, 'c');
+    float fProdResul = fProdScal((float*)fVectU1, (float*)fVectU2);
 
     /* display result */
-    printf("the sum of vector is: %f \n the mean of vector is: %f \n", resultarray[0], resultarray[1]);
-    printf("the min of vector is: %f and max is %f\n", maxmin[0], maxmin[1]);
-    printf("The number of vowel is: %d\n", nbrVoyel);
-    printf("The number of possibility is: %d", nbrPosssi);
+//    printf("the sum of vector is: %f \n the mean of vector is: %f \n", resultarray[0], resultarray[1]);
+//    printf("the min of vector is: %f and max is %f\n", maxmin[0], maxmin[1]);
+//    printf("The number of vowel is: %d\n", nbrVoyel);
+//    printf("The number of possibility is: %d \n", nbrPosssi);
+    printf("The scalar product  of two vector is: %f", fProdResul);
     return 0;
 }

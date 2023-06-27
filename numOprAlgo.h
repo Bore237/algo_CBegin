@@ -14,7 +14,6 @@
 
 #include <stdbool.h>
 
-
 /**
  * @brief check if the number is first
  *
@@ -22,8 +21,7 @@
  * @return true  if the number is first
  * @return false  if is and other number
  */
-bool bIsFirtNumber(unsigned int  iTestNumber);
-
+bool bIsFirtNumber(unsigned int iTestNumber);
 
 /**
  * @brief caculate the factorial of the word
@@ -32,7 +30,6 @@ bool bIsFirtNumber(unsigned int  iTestNumber);
  * @return factorial of input number
  */
 unsigned int iFatorialInt(unsigned int iTestnumber);
-
 
 /**
  * @brief take the number of term and display the serie of fibonaccie
@@ -47,7 +44,7 @@ void vDisplayFibonacci(int iNumberTerm);
  * @param fNumber   is the number that we want to obtains power
  * @param iLevelPow   is the power number of the operation
  */
-float vPowerNumber( float fNumber, int iLevelPow);
+float vPowerNumber(float fNumber, int iLevelPow);
 
 /**
  * @brief check if  the number is power of two
@@ -58,7 +55,6 @@ float vPowerNumber( float fNumber, int iLevelPow);
  */
 bool bIsPowerOfTwo(int iNumber);
 
-
 /**
  * @brief check if the number is pecfect
  *
@@ -66,7 +62,7 @@ bool bIsPowerOfTwo(int iNumber);
  * @return true  if is a is pecfect number
  * @return false if is not a pecfect number
  */
-bool bNumberIsPerfect(unsigned int  iNumber);
+bool bNumberIsPerfect(unsigned int iNumber);
 
 /**
  * @brief do the convertion the decimal number and binary number
@@ -75,7 +71,7 @@ bool bNumberIsPerfect(unsigned int  iNumber);
  * @return true if the convertion go well
  * @return false if the convertion fail
  */
-bool bConvDecToBinary(unsigned int  iNumber);
+bool bConvDecToBinary(unsigned int iNumber);
 
 /**
  * @brief check if the input data is the armstromg number
@@ -86,15 +82,12 @@ bool bConvDecToBinary(unsigned int  iNumber);
  */
 bool bIsArmstromgNumber(int iNumber);
 
-int nombrechifreUnEntier(int valeurEntier);
-
-
-
-
-
-
-
-
-
+/**
+ * @brief Count the number of digit for enteger number
+ *
+ * @param iIntergerValue Input value that will want to know the digit number
+ * @return the number of digit to  the interger
+ */
+int iNbrDigitToInteger(int iIntergerValue);
 
 #endif // NUMBEROPR_H_INCLUDED
