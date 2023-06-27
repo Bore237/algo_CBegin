@@ -236,3 +236,77 @@ int iNbrDigitToInteger(int iIntergerValue)
 
     return iNbrDigit;
 }
+
+/**
+ * @brief check if the input data is the armstromg number
+ *
+ * @param iNumber he integer that you want to check
+ * @return true   if is the  armstromg number
+ * @return false  if is not armstromg number
+ * @example The many astom number: 0, 1, 153, 370, 371, 407
+ */
+bool bIsArmstromgNumber(int iNumber)
+{
+    // Init value
+    int iCurentValue = 0;
+    bool bState = true;
+    int iSumNumber = 0;
+    int iResDiv = iNumber;
+
+    // Loop for all the digit of the input number
+    while (bState == true)
+    {
+        // Take the end digit of enteger and power it to three
+        iCurentValue = iResDiv % 10;
+        iSumNumber += pow(iCurentValue, 3);
+        // Delete the end digit
+        iResDiv = iResDiv / 10;
+
+        // Check if we have browse all digit of integer
+        if (iResDiv < 1)
+        {
+            bState = false;
+        }
+    }
+
+    // display result
+    if (iSumNumber == iNumber)
+    {
+        printf("This number is Armstrong number \n");
+        return true;
+    }
+    else
+    {
+        printf("This number is not Armstrong number \n");
+        return false;
+    }
+}
+
+/**
+ * @brief take the number of term and display the serie of fibonaccie
+ *
+ * @param iNumberTerm  number of term that you want to display
+ */
+void vDisplayFibonacci(int iNumberTerm)
+{
+    //Init value
+    int iPreviousTerm = 1;
+    int iCurentTerm = iPreviousTerm;
+    int iNextTerm = 0;
+
+    printf("the %d first number of serie of fibonacci is: \n");
+    printf("%d, \t ", iCurentTerm);
+    for (int i = 0; i < iNumberTerm; i++)
+    {
+        iNextTerm = iPreviousTerm + iCurentTerm;
+        iPreviousTerm = iCurentTerm;
+        iCurentTerm = iNextTerm;
+        if(i == (iNumberTerm-1)){
+            printf("%d", iNextTerm);
+        }else{
+            printf("%d, \t", iNextTerm);
+        }
+    }
+
+    printf("\n");
+}

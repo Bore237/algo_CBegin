@@ -16,6 +16,8 @@ int main()
     //    bNumberIsPerfect(33550336);
     //    bConvDecToBinary(602);
     int iNbrDigit = iNbrDigitToInteger(789);
+    bIsArmstromgNumber(153);
+    vDisplayFibonacci(10);
 
     printf("The number of digit is %d", iNbrDigit);
 
