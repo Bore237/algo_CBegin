@@ -90,4 +90,35 @@ bool bIsArmstromgNumber(int iNumber);
  */
 int iNbrDigitToInteger(int iIntergerValue);
 
+/**
+ * @brief check if the number return to one follow a sequence
+ *
+ * @example (principe) if number is unpair (3*nber + 1) else (nber/2)
+ * if the numbre attend one he can't increase he blocked between 4, 2 and 1.
+ * but the execption exist: N = 4k + 1, N=16k+7, N=16k+11 et N=16k+15
+ */
+bool bIsSeriOfCollatz(int iCheckNber);
+
+/**
+ * @brief Determinate how many digit that have input fibonaci serie
+ *
+ * @param iNumberTerm  The arry who containt fibonacci element
+ * @param iLength The length of array
+ * @return The number of digit that containt this serie
+ */
+int iNbrDigitFibonacci(int *iNumberTerm, int iLength);
+
+// {0, 1, 2, 3, 5,      8,      13,     21,     34,
+// 55,     89,     144,    233,    377,
+// 610,    987,    1597,   2584,   4181,
+// 6765,   10946,  17711,  28657,  46368,
+// 75025,  121393,         196418,         317811,         514229,
+// 832040,         1346269,        2178309,        3524578,        5702887,
+// 9227465,        14930352,       24157817,       39088169,       63245986,
+// 102334155,      165580141,      267914296,      433494437,      701408733,
+// 1134903170,     1836311903,     2971215073,     512559680,      3483774753,
+// 3996334433,     3185141890,     2886509027,     1776683621,     368225352,
+// 2144908973,     2513134325,     363076002,      2876210327,     3239286329,
+// 1820529360,     764848393,      2585377753,     3350226146,     1640636603,
+// 695895453,      2336532056,     3032427509,     1073992269,     4106419778}
 #endif // NUMBEROPR_H_INCLUDED

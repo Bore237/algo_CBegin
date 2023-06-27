@@ -289,33 +289,78 @@ bool bIsArmstromgNumber(int iNumber)
  */
 void vDisplayFibonacci(int iNumberTerm)
 {
-    //Init value
-    int iPreviousTerm = 1;
-    int iCurentTerm = 1;
-    int iNextTerm = 0;
+    // Init value
+    unsigned int iPreviousTerm = 0;
+    unsigned int iCurentTerm = 1;
+    unsigned int iNextTerm = 0;
 
     // Security
-    if(iNumberTerm >= 100){
+    if (iNumberTerm > 70)
+    {
         printf(" We can't display the serie for the term great than 99 elements \n \n");
         return;
     }
     printf("the %d first number of serie of fibonacci is: \n", iNumberTerm);
-    printf("%d, \t ", iCurentTerm);
-    for (int i = 1; i < iNumberTerm; i++)
+    printf("%u, \t %u, \t", iPreviousTerm, iCurentTerm);
+    for (int i = 2; i < iNumberTerm; i++)
     {
         iNextTerm = iPreviousTerm + iCurentTerm;
         iPreviousTerm = iCurentTerm;
         iCurentTerm = iNextTerm;
-        if(i == (iNumberTerm-1)){
-            printf("%d", iNextTerm);
-        }else if( (i % 10) == 0){
-            printf("\n");
-            printf("%d, \t", iNextTerm);
+        if (i == (iNumberTerm - 1))
+        {
+            printf("%u", iNextTerm);
         }
-        else{
-            printf("%d, \t", iNextTerm);
+        else if ((i % 5) == 0)
+        {
+            printf("\n");
+            printf("%u, \t", iNextTerm);
+        }
+        else
+        {
+            printf("%u, \t", iNextTerm);
         }
     }
 
     printf("\n");
+}
+
+/**
+ * @brief Determinate how many digit that have input fibonaci serie
+ *
+ * @param iNumberTerm  The arry who containt fibonacci element
+ * @param iLength The length of array
+ * @return The number of digit that containt this serie
+ */
+int iNbrDigitFibonacci(int *iNumberTerm, int iLength)
+{
+    // Init value
+    int iSumDigit = 0;
+    int iNbrDigit = 0;
+    int iSizeDigit = 1;
+    int iDividente = 10;
+    bool state = false;
+
+    // loop for do the operation
+    for (int iCount = 0; iCount < iLength; iCount++)
+    {
+        if (((iNumberTerm[iCount]) / iDividente) >= 1)
+        {
+            iSumDigit += iNbrDigit * iSizeDigit;
+            iDividente *= 10;
+            iSizeDigit++;
+            iNbrDigit = 1;
+            state = true;
+        }
+        else
+        {
+            iNbrDigit++;
+            state = false;
+        }
+    }
+    if (state == false)
+    {
+        iSumDigit += iNbrDigit * iSizeDigit;
+    }
+    return iSumDigit;
 }
