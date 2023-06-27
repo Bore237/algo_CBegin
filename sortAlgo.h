@@ -24,3 +24,15 @@ void vSortSelection(void *pvOutBuffer, void *pvIntBuffer);
  */
 void vSortOfBubble(void *pvOutBuffer, void *pvIntBuffer);
 
+/**
+ * @brief sort the array and use the bubble sort
+ *
+ * @param pvIntBuffer array that you want to sort
+ * @param pvOutBuffer the sort array
+ */
+void vQuickSort(void *pvOutBuffer, void *pvIntBuffer);
+
+/**
+ * @brief recherche binaire dans un tableau trier
+ * 
+ */
