@@ -93,8 +93,8 @@ int iNbrDigitToInteger(int iIntergerValue);
 /**
  * @brief check if the number return to one follow a sequence
  *
- * @example (principe) if number is unpair (3*nber + 1) else (nber/2)
- * if the numbre attend one he can't increase he blocked between 4, 2 and 1.
+ * @example (principe) if is an old number (3*nber + 1) else if an event number (nber/2)
+ * if the number arrive to one he can't increase he blocked between 4, 2 and 1.
  * but the execption exist: N = 4k + 1, N=16k+7, N=16k+11 et N=16k+15
  */
 bool bIsSeriOfCollatz(int iCheckNber);

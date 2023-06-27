@@ -480,7 +480,7 @@ float fProdScal(float *pfVector1, float *pfVector2, int iLength)
     float fProdResult = 0;
 
     // Handle operation dependly of size
-    if ((iLength > 3) )
+    if ((iLength > 3))
     {
         return 0;
     }
@@ -492,4 +492,56 @@ float fProdScal(float *pfVector1, float *pfVector2, int iLength)
     }
 
     return fProdResult;
+}
+
+/**
+ * @brief Check if the sting parenthesis is banlanced
+ *
+ * @param pcStringParamthesis is the input string parenthesis
+ * @param cRefTypeOpen is the type of open parenthesis that will want to  check
+ * @param cRefTypeClose is the type of close parenthesis that will want to  check
+ * @return true  if the string is banlanced
+ * @return false if the string is not banlanced
+ */
+bool bIsParenthesisBalance(char *pcStringParamthesis, char cRefTypeOpen,
+                           char cRefTypeClose)
+{
+    // Init value
+    int iSize = strlen(pcStringParamthesis);
+    int iOpenCount = 0;
+    int iCloseCount = 0;
+
+    // Check if the size of string is event number
+    if ((iSize % 2) != 0)
+    {
+        return false;
+    }
+
+    // Check if we have  as mush open as close parenthesis
+    for (int i = 0; i < iSize; i++)
+    {
+        if (pcStringParamthesis[i] == cRefTypeOpen)
+        {
+            iOpenCount++;
+        }
+        if (pcStringParamthesis[i] == cRefTypeClose)
+        {
+            iCloseCount++;
+        }
+
+        if (iCloseCount > (iSize / 2))
+        {
+            printf("error \n");
+            return false;
+        }
+    }
+
+    if (iCloseCount == iOpenCount)
+    {
+        printf("Great that string is correct \n");
+        return true;
+    }
+
+    printf("I'm sorry that string is not correct \n");
+    return true;
 }

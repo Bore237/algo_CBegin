@@ -93,4 +93,15 @@ int iNberPermutation(void *pvIntBuffer, char cTypeElement);
  */
 float fProdScal(float *pfVector1, float *pfVector2, int iLength);
 
+/**
+ * @brief Check if the sting parenthesis is banlanced
+ * 
+ * @param pcStringParamthesis is the input string parenthesis
+ * @param cRefTypeOpen is the type of open parenthesis that will want to  check
+ * @param cRefTypeClose is the type of close parenthesis that will want to  check
+ * @return true  if the string is banlanced
+ * @return false if the string is not banlanced
+ */
+bool bIsParenthesisBalance(char *pcStringParamthesis, char cRefTypeOpen,
+                            char cRefTypeClose);
 #endif // ARRAYALGO_H_INCLUDED
