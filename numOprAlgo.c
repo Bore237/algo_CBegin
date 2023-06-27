@@ -291,19 +291,28 @@ void vDisplayFibonacci(int iNumberTerm)
 {
     //Init value
     int iPreviousTerm = 1;
-    int iCurentTerm = iPreviousTerm;
+    int iCurentTerm = 1;
     int iNextTerm = 0;
 
-    printf("the %d first number of serie of fibonacci is: \n");
+    // Security
+    if(iNumberTerm >= 100){
+        printf(" We can't display the serie for the term great than 99 elements \n \n");
+        return;
+    }
+    printf("the %d first number of serie of fibonacci is: \n", iNumberTerm);
     printf("%d, \t ", iCurentTerm);
-    for (int i = 0; i < iNumberTerm; i++)
+    for (int i = 1; i < iNumberTerm; i++)
     {
         iNextTerm = iPreviousTerm + iCurentTerm;
         iPreviousTerm = iCurentTerm;
         iCurentTerm = iNextTerm;
         if(i == (iNumberTerm-1)){
             printf("%d", iNextTerm);
-        }else{
+        }else if( (i % 10) == 0){
+            printf("\n");
+            printf("%d, \t", iNextTerm);
+        }
+        else{
             printf("%d, \t", iNextTerm);
         }
     }
