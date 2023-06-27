@@ -39,14 +39,6 @@ float *fMaxMinArrea(void *pvIntBuffer, char cTypeElement);
 bool bIsPalindrome(char *pcWordBuffer);
 
 /**
- * @brief sort the array and use the selection sort
- *
- * @param pvIntBuffer array that you want to sort
- * @param pvOutBuffer the sort array
- */
-void vSortSelection(void *pvOutBuffer, void *pvIntBuffer);
-
-/**
  * @brief inverse the words of the string
  *
  * @param pcWordBuffer : The adress of word that want to inverse it
@@ -73,14 +65,6 @@ bool bIsAnagram(char *pcWordBuffer1, char *pcWordBuffer2);
 int iNbrVowelOfWord(char *pcWordBuffer);
 
 /**
- * @brief sort the array and use the bubble sort
- *
- * @param pvIntBuffer array that you want to sort
- * @param pvOutBuffer the sort array
- */
-void vSortOfBubble(void *pvOutBuffer, void *pvIntBuffer);
-
-/**
  * @brief Display the intersetion between two array
  *
  * @param pfResultBuffer will be containt the intersertion between two array
@@ -99,6 +83,14 @@ float *vIntersionOfArray(float *pfResultBuffer, float *pfFirstBuffer, float *pfS
  */
 int iNberPermutation(void *pvIntBuffer, char cTypeElement);
 
-float fProduiscalaire(float *one, float two);
+/**
+ * @brief Calalate the scalar product  of two vector
+ *
+ * @param pfVector1 entry the value of first vector
+ * @param pfVector2 entry value of second vector
+ * @param iLength The length of two vector
+ * @return The scalar product  of two vector
+ */
+float fProdScal(float *pfVector1, float *pfVector2, int iLength);
 
 #endif // ARRAYALGO_H_INCLUDED

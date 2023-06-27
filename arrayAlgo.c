@@ -401,6 +401,31 @@ int iNberPermutation(void *pvIntBuffer, char cTypeElement)
 
         // Convert to the float type
         float *pfArray = (float *)pvIntBuffer;
+
+        // Check if the array have the redundace value
+        while (iCount < iSize)
+        {
+            // Take the fix position and increase current count
+            iFixPos = iCount;
+            iCount++;
+            // Loop for find if the array has a redondance element
+            for (int j = iCount; j < iSize; j++)
+            {
+                if (pfArray[iFixPos] == pfArray[j])
+                {
+                    fvSwapWord(pfArray, (iCount), j);
+                    iNbrRedondance++;
+                    iCount++;
+                }
+            }
+            // If the redondance happen skip to the next position
+            if ((iCount - iFixPos) > 1)
+            {
+                iProdFactorial = iProdFactorial * iFatorialInt(iNbrRedondance);
+                // Reset redondance count
+                iNbrRedondance = 1;
+            }
+        }
     }
     else
     {
@@ -409,7 +434,6 @@ int iNberPermutation(void *pvIntBuffer, char cTypeElement)
 
         // Calculate the size of array
         iSize = strlen(pfArray);
-        printf("\n size %d \n", iSize);
 
         // Check if the array have the redundace value
         while (iCount < iSize)
@@ -439,4 +463,33 @@ int iNberPermutation(void *pvIntBuffer, char cTypeElement)
 
     // if the ensembly have the repily the nbr of poss is n!/k!
     return (iFatorialInt(iSize) / iProdFactorial);
+}
+
+/**
+ * @brief Calalate the scalar product  of two vector
+ *
+ * @param pfVector1 entry the value of first vector
+ * @param pfVector2 entry value of second vector
+ * @param iLength The length of two vector
+ * @return The scalar product  of two vector
+ * @example A=[ux, ux], B=[vx, vy] => A.B = [ux*vx] + [uy*vy]
+ */
+float fProdScal(float *pfVector1, float *pfVector2, int iLength)
+{
+    // init value
+    float fProdResult = 0;
+
+    // Handle operation dependly of size
+    if ((iLength > 3) )
+    {
+        return 0;
+    }
+
+    // Loop for this opperation
+    for (int i = 0; i < iLength; i++)
+    {
+        fProdResult += pfVector1[i] * pfVector2[i];
+    }
+
+    return fProdResult;
 }
