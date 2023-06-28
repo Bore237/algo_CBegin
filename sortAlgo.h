@@ -6,15 +6,18 @@
  * @date 6/27/2023
  */
 
+#ifndef SORTALGO_H_INCLUDED
+#define SORTALGO_H_INCLUDED
+
+#include <stdbool.h>
 
 /**
  * @brief sort the array and use the selection sort
  *
  * @param pvIntBuffer array that you want to sort
- * @param pvOutBuffer the sort array
+ * @param iLength The length of input sort
  */
-void vSortSelection(void *pvOutBuffer, void *pvIntBuffer);
-
+void vSortSelection(int *piIntBuffer, int iLength);
 
 /**
  * @brief sort the array and use the bubble sort
@@ -32,7 +35,4 @@ void vSortOfBubble(void *pvOutBuffer, void *pvIntBuffer);
  */
 void vQuickSort(void *pvOutBuffer, void *pvIntBuffer);
 
-/**
- * @brief recherche binaire dans un tableau trier
- * 
- */
+#endif // SORTALGO_H_INCLUDED
