@@ -31,9 +31,9 @@ void vSortInsert(int *piIntBuffer, int iLength);
  * @brief sort the array and use the bubble sort
  *
  * @param pvIntBuffer array that you want to sort
- * @param pvOutBuffer the sort array
+ * @param iLength The length of input sort
  */
-void vSortOfBubble(void *pvOutBuffer, void *pvIntBuffer);
+void vSortOfBubble(int *piIntBuffer, int iLength);
 
 /**
  * @brief sort the array and use the bubble sort

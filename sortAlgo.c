@@ -85,13 +85,11 @@ void vSortSelection(int *piIntBuffer, int iLength)
         // Position the min value in the great position
         fvSwapWord(piIntBuffer, i, iIndexCurentMin);
 
-
         printf("%d,  \t", piIntBuffer[i]);
     }
 
     printf("\n");
 }
-
 
 /**
  * @brief sort the array and use the insertion sort
@@ -99,8 +97,9 @@ void vSortSelection(int *piIntBuffer, int iLength)
  * @param pvIntBuffer array that you want to sort
  * @param iLength The length of input sort
  */
-void vSortInsert(int *piIntBuffer, int iLength){
-     // Init value
+void vSortInsert(int *piIntBuffer, int iLength)
+{
+    // Init value
     int iCurentVal = piIntBuffer[1];
     int iStartCount = 0;
     iLength = iLength - 1;
@@ -113,22 +112,69 @@ void vSortInsert(int *piIntBuffer, int iLength){
         // Handle the start index of second counter
         iCurentVal = piIntBuffer[iStartCount];
 
-        if(iStartCount <= iLength)
+        if (iStartCount <= iLength)
         {
             while ((iStartCount > 0))
             {
                 iStartCount--;
-                //Put the curent item to the well position to left
+                // Put the curent item to the well position to left
                 if ((iCurentVal <= piIntBuffer[iStartCount]))
                 {
-                    fvSwapWord(piIntBuffer, iStartCount, (iStartCount+1));
+                    fvSwapWord(piIntBuffer, iStartCount, (iStartCount + 1));
                     iCurentVal = piIntBuffer[iStartCount];
                 }
             }
         }
     }
 
-    //Display result
+    // Display result
+    for (int i = 0; i <= iLength; i++)
+    {
+        printf("%d,  \t", piIntBuffer[i]);
+    }
+    printf("\n");
+}
+
+/**
+ * @brief sort the array and use the bubble sort
+ *
+ * @param pvIntBuffer array that you want to sort
+ * @param iLength The length of input sort
+ */
+void vSortOfBubble(int *piIntBuffer, int iLength)
+{
+    // Init value
+    int iStartCount = 0;
+    int iCurentVal = piIntBuffer[0];
+    iLength = iLength - 1;
+
+    printf("The bubble sort  off this array is: \t");
+    // Loop on the array items
+    for (int i = 0; i <= iLength; i++)
+    {
+        // init curent min items
+        iCurentVal = piIntBuffer[0];
+
+        // Handle the start index of second counter
+        iStartCount = 1;
+
+        // itterate all the arry to pair an d swap the element if previous element
+        // is great than next element
+        for (int j = iStartCount; j <= iLength; j++)
+        {
+            // move the current minimun
+            if ((iCurentVal >= piIntBuffer[j]))
+            {
+                // Swap the items
+                fvSwapWord(piIntBuffer, (j-1), j);
+            }
+
+            // actualise current value
+            iCurentVal = piIntBuffer[j];
+        }
+    }
+
+    // Display result
     for (int i = 0; i <= iLength; i++)
     {
         printf("%d,  \t", piIntBuffer[i]);

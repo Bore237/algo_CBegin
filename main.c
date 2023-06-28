@@ -4,6 +4,7 @@
 /* include local file */
 #include "numOprAlgo.h"
 #include "arrayAlgo.h"
+#include "sortAlgo.h"
 
 int main()
 {
@@ -43,7 +44,7 @@ int main()
     float fVectU1[] = {2,3,4};
     float fVectU2[] = {1,-2,2};
     char pvIntBuffer[] = "CELLULE";
-    char cString[] = "((borel)))";
+    char cString[] = "(()))";
 
     // Call local function
     float *resultarray = fSumMeanArray(tab, 'i');
@@ -62,6 +63,23 @@ int main()
 //    printf("the min of vector is: %f and max is %f\n", maxmin[0], maxmin[1]);
 //    printf("The number of vowel is: %d\n", nbrVoyel);
 //    printf("The number of possibility is: %d \n", nbrPosssi);
-    printf("The scalar product  of two vector is: %f", fProdResul);
+    printf("The scalar product  of two vector is: %f \n", fProdResul);
+
+
+    /////*  Sort function *//////
+    printf(" \n The result of sort function \n \n");
+    // Value that we want to sort
+    int iSelectArray[]={3,6,1,8,4,5};
+    int iInsertArray[]={4,3,2,10,12,1,5,6};
+    int iBubbeArray[]={5,1,6,2,4,3};
+    int iLengthSelectSort = sizeof(iSelectArray)/sizeof(int);
+    int iLengthInsertSort = sizeof(iInsertArray)/sizeof(int);
+    int iLengthBubbeSort = sizeof(iBubbeArray)/sizeof(int);
+
+    // different sort function
+    vSortSelection(iBubbeArray , iLengthSelectSort );
+    vSortInsert(iInsertArray, iLengthInsertSort);
+    vSortOfBubble(iSelectArray, iLengthBubbeSort);
+
     return 0;
 }
