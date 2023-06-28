@@ -20,6 +20,14 @@
 void vSortSelection(int *piIntBuffer, int iLength);
 
 /**
+ * @brief sort the array and use the insertion sort
+ *
+ * @param pvIntBuffer array that you want to sort
+ * @param iLength The length of input sort
+ */
+void vSortInsert(int *piIntBuffer, int iLength);
+
+/**
  * @brief sort the array and use the bubble sort
  *
  * @param pvIntBuffer array that you want to sort
