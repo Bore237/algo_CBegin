@@ -39,8 +39,10 @@ void vSortOfBubble(int *piIntBuffer, int iLength);
  * @brief sort the array and use the bubble sort
  *
  * @param pvIntBuffer array that you want to sort
- * @param pvOutBuffer the sort array
+ * @param iLength length of array
  */
-void vQuickSort(void *pvOutBuffer, void *pvIntBuffer);
+void vQuickSort(void *pvIntBuffer, int iLength);
+
+void quickSort(int arr[], int low, int high);
 
 #endif // SORTALGO_H_INCLUDED

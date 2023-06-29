@@ -20,6 +20,8 @@
  */
 static void fvSwapWord(int *piBuffer, int index1, int index2);
 
+static int partition(int arr[], int low, int high);
+
 /**
  **************/
 /* IMPLEMENTATION OF STATIC FUNCTION */ /************
@@ -166,7 +168,7 @@ void vSortOfBubble(int *piIntBuffer, int iLength)
             if ((iCurentVal >= piIntBuffer[j]))
             {
                 // Swap the items
-                fvSwapWord(piIntBuffer, (j-1), j);
+                fvSwapWord(piIntBuffer, (j - 1), j);
             }
 
             // actualise current value
@@ -180,4 +182,53 @@ void vSortOfBubble(int *piIntBuffer, int iLength)
         printf("%d,  \t", piIntBuffer[i]);
     }
     printf("\n");
+}
+
+static int partition(int arr[], int low, int high)
+{
+    int pivot = arr[high];
+    int i = (low - 1);
+
+    for (int j = low; j <= high - 1; j++)
+    {
+        if (arr[j] < pivot)
+        {
+            i++;
+            fvSwapWord(arr, i, j);
+        }
+    }
+    fvSwapWord(arr, (i + 1), high);
+    return (i + 1);
+}
+
+void quickSort(int arr[], int low, int high)
+{
+    if (low < high)
+    {
+        int pivot = partition(arr, low, high);
+        quickSort(arr, low, pivot - 1);
+        quickSort(arr, pivot + 1, high);
+    }
+}
+
+/**
+ * @brief sort the array and use the bubble sort
+ *
+ * @param pvIntBuffer array that you want to sort
+ * @param iLength length of array
+ */
+void vQuickSort(void *pvIntBuffer, int iLength)
+{
+    // Init the value
+    int iMiddle = iLength / 2;
+
+    // loop for realise the operation
+}
+
+int iFcatotial(int nbr){
+    if(nbr > 0){
+        return nbr * iFcatotial(nbr-1);
+    }else{
+        return 1;
+    }
 }

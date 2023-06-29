@@ -76,10 +76,18 @@ int main()
     int iLengthInsertSort = sizeof(iInsertArray)/sizeof(int);
     int iLengthBubbeSort = sizeof(iBubbeArray)/sizeof(int);
 
+    int arr[] = {35, 33, 42, 10, 14, 19, 27,44,26,31};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
     // different sort function
     vSortSelection(iBubbeArray , iLengthSelectSort );
     vSortInsert(iInsertArray, iLengthInsertSort);
     vSortOfBubble(iSelectArray, iLengthBubbeSort);
+    quickSort(arr, 0, n - 1);
+    printf("Sorted array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
 
     return 0;
 }
